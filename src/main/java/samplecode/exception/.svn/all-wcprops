@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/276/trunk/src/main/java/samplecode/exception
+END
+ExceptionMsg.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/276/trunk/src/main/java/samplecode/exception/ExceptionMsg.java
+END
+ClientSideConnectExceptionMessageGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/276/trunk/src/main/java/samplecode/exception/ClientSideConnectExceptionMessageGenerator.java
+END
+AttributeNotSupportedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/exception/AttributeNotSupportedException.java
+END
+BindException.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/276/trunk/src/main/java/samplecode/exception/BindException.java
+END
+ExceptionMsgFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/exception/ExceptionMsgFactory.java
+END
+LdapException.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/exception/LdapException.java
+END

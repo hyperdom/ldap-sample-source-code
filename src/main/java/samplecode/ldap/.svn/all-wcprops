@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldap
+END
+LdapConnectionPoolExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldap/LdapConnectionPoolExample.java
+END
+ReplaceValue.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldap/ReplaceValue.java
+END
+SupportedUserAttribute.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldap/SupportedUserAttribute.java
+END
+LdapEntryDisplay.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldap/LdapEntryDisplay.java
+END
+UnsolicitedNotification.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldap/UnsolicitedNotification.java
+END
+BasicLdapEntryDisplay.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldap/BasicLdapEntryDisplay.java
+END
+SupportedClass.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldap/SupportedClass.java
+END
+DefaultUnsolicitedNotificationHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldap/DefaultUnsolicitedNotificationHandler.java
+END
+LdapSupport.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldap/LdapSupport.java
+END
+AbstractSupportedAttribute.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldap/AbstractSupportedAttribute.java
+END
+LdapLogRecord.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldap/LdapLogRecord.java
+END
+SupportedFeature.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldap/SupportedFeature.java
+END
+LdapSearchSupport.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldap/LdapSearchSupport.java
+END
+BasicLdapLogRecord.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldap/BasicLdapLogRecord.java
+END

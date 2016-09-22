@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/274/trunk/src/main/java/samplecode/memory
+END
+InMemoryDirectoryServerListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/memory/InMemoryDirectoryServerListener.java
+END
+LdapListenerExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/274/trunk/src/main/java/samplecode/memory/LdapListenerExample.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/193/trunk/src/main/java/samplecode/memory/package-info.java
+END
+InMemoryDirectoryServerConfigStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/245/trunk/src/main/java/samplecode/memory/InMemoryDirectoryServerConfigStrategy.java
+END

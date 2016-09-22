@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldif
+END
+ReadLdifFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldif/ReadLdifFile.java
+END
+LdifLoadProgressEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/ldif/LdifLoadProgressEvent.java
+END

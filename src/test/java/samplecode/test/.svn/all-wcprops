@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/275/trunk/src/test/java/samplecode/test
+END
+CommandLineOptionsTestCases.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/272/trunk/src/test/java/samplecode/test/CommandLineOptionsTestCases.java
+END
+TestDataPairing.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/272/trunk/src/test/java/samplecode/test/TestDataPairing.java
+END
+DataPairing.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/256/trunk/src/test/java/samplecode/test/DataPairing.java
+END
+TestLDAPCommandLineTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/272/trunk/src/test/java/samplecode/test/TestLDAPCommandLineTool.java
+END
+ConnectTestCases.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/275/trunk/src/test/java/samplecode/test/ConnectTestCases.java
+END

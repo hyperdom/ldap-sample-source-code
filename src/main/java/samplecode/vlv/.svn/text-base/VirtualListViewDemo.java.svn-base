@@ -1,0 +1,377 @@
+/*
+ * Copyright 2008-2011 UnboundID Corp. All Rights Reserved.
+ */
+/*
+ * Copyright (C) 2008-2011 UnboundID Corp. This program is free
+ * software; you can redistribute it and/or modify it under the terms of
+ * the GNU General Public License (GPLv2 only) or the terms of the GNU
+ * Lesser General Public License (LGPLv2.1 only) as published by the
+ * Free Software Foundation. This program is distributed in the hope
+ * that it will be useful, but WITHOUT ANY WARRANTY; without even the
+ * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ * PURPOSE. See the GNU General Public License for more details. You
+ * should have received a copy of the GNU General Public License along
+ * with this program; if not, see <http://www.gnu.org/licenses>.
+ */
+
+package samplecode.vlv;
+
+import com.unboundid.asn1.ASN1OctetString;
+import com.unboundid.ldap.sdk.*;
+import com.unboundid.ldap.sdk.controls.ServerSideSortRequestControl;
+import com.unboundid.ldap.sdk.controls.SortKey;
+import com.unboundid.ldap.sdk.controls.VirtualListViewRequestControl;
+import com.unboundid.ldap.sdk.controls.VirtualListViewResponseControl;
+import com.unboundid.util.args.Argument;
+import com.unboundid.util.args.ArgumentException;
+import com.unboundid.util.args.ArgumentParser;
+import com.unboundid.util.args.BooleanArgument;
+import org.apache.commons.logging.Log;
+import samplecode.annotation.Author;
+import samplecode.annotation.CodeVersion;
+import samplecode.annotation.Launchable;
+import samplecode.annotation.Since;
+import samplecode.exception.AttributeNotSupportedException;
+import samplecode.ldap.BasicLdapEntryDisplay;
+import samplecode.ldap.LdapEntryDisplay;
+import samplecode.ldap.SupportedFeature;
+import samplecode.ldap.SupportedUserAttribute;
+import samplecode.listener.DefaultLdapExceptionListener;
+import samplecode.listener.LdapExceptionListener;
+import samplecode.listener.ObservedByLdapExceptionListener;
+import samplecode.tools.AbstractTool;
+import samplecode.tools.BasicToolCompletedProcessing;
+import samplecode.tools.ToolCompletedProcessing;
+
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
+
+/**
+ * <blockquote>
+ * <p/>
+ * <pre>
+ * Provides a demonstration of the use of the virtual list view request and
+ * response controls. The VLV request and response controls are similar to the
+ * simple paged results request control except LDAP clients may access
+ * arbitrary
+ * pages of data.
+ *
+ * Usage:  VirtualListViewDemo {options}
+ *
+ * Available options include:
+ * -h, --hostname {host}
+ *     The IP address or resolvable name to use to connect to the directory
+ *     server.  If this is not provided, then a default value of 'localhost'
+ * will
+ *     be used.
+ * -p, --port {port}
+ *     The port to use to connect to the directory server.  If this is not
+ *     provided, then a default value of 389 will be used.
+ * -D, --bindDN {dn}
+ *     The DN to use to bind to the directory server when performing simple
+ *     authentication.
+ * -w, --bindPassword {password}
+ *     The password to use to bind to the directory server when performing
+ * simple
+ *     authentication or a password-based SASL mechanism.
+ * -j, --bindPasswordFile {path}
+ *     The path to the file containing the password to use to bind to the
+ *     directory server when performing simple authentication or a
+ * password-based
+ *     SASL mechanism.
+ * -Z, --useSSL
+ *     Use SSL when communicating with the directory server.
+ * -q, --useStartTLS
+ *     Use StartTLS when communicating with the directory server.
+ * -X, --trustAll
+ *     Trust any certificate presented by the directory server.
+ * -K, --keyStorePath {path}
+ *     The path to the file to use as the key store for obtaining client
+ *     certificates when communicating securely with the directory server.
+ * -W, --keyStorePassword {password}
+ *     The password to use to access the key store contents.
+ * -u, --keyStorePasswordFile {path}
+ *     The path to the file containing the password to use to access the key
+ * store
+ *     contents.
+ * --keyStoreFormat {format}
+ *     The format (e.g., jks, jceks, pkcs12, etc.) for the key store file.
+ * -P, --trustStorePath {path}
+ *     The path to the file to use as trust store when determining whether to
+ *     trust a certificate presented by the directory server.
+ * -T, --trustStorePassword {password}
+ *     The password to use to access the trust store contents.
+ * -U, --trustStorePasswordFile {path}
+ *     The path to the file containing the password to use to access the trust
+ *     store contents.
+ * --trustStoreFormat {format}
+ *     The format (e.g., jks, jceks, pkcs12, etc.) for the trust store file.
+ * -N, --certNickname {nickname}
+ *     The nickname (alias) of the client certificate in the key store to
+ * present
+ *     to the directory server for SSL client authentication.
+ * -o, --saslOption {name=value}
+ *     A name-value pair providing information to use when performing SASL
+ *     authentication.
+ * -b, --baseObject {distinguishedName}
+ *     The base object used in the search request.
+ * --reportInterval {positive-integer}
+ *     The report interval in milliseconds.
+ * --reportCount {positive-integer}
+ *     Specifies the maximum number of reports. This command line argument is
+ *     applicable to tools that display repeated reports. The time between
+ *     repeated reports is specified by the --reportInterval command line
+ *     argument.
+ * -a, --attribute {attribute name or type}
+ *     The attribute used in the search request or other request. This command
+ *     line argument is not required, and can be specified multiple times. If
+ * this
+ *     command line argument is not specified, the value '*' is used.
+ * -f, --filter {filter}
+ *     The search filter used in the search request.
+ * -i, --initialConnections {positiveInteger}
+ *     The number of initial connections to establish to directory server when
+ *     creating the connection pool.
+ * -m, --maxConnections {positiveInteger}
+ *     The maximum number of connections to establish to directory server when
+ *     creating the connection pool.
+ * -s, --scope {searchScope}
+ *     The scope of the search request; allowed values are BASE, ONE, and SUB
+ * --sizeLimit {positiveInteger}
+ *     The search size limit
+ * --timeLimit {positiveInteger}
+ *     The search time limit
+ * --pageSize {positiveInteger}
+ *     The search page size
+ * --criticality
+ * -H, -?, --help
+ *     Display usage information for this program.
+ * </pre>
+ * <p/>
+ * </blockquote>
+ */
+@Author("terry.gardner@unboundid.com")
+@Since("Dec 4, 2011")
+@CodeVersion("1.6")
+@Launchable
+public final class VirtualListViewDemo extends AbstractTool
+  implements LdapExceptionListener, ObservedByLdapExceptionListener {
+
+  private static void main(final PrintStream outStream,
+                           final PrintStream errStream,
+                           final String... args) {
+    final VirtualListViewDemo demo = new VirtualListViewDemo(outStream,errStream);
+    final ResultCode resultCode = demo.runTool(args);
+    if(resultCode != null) {
+      final ToolCompletedProcessing c =
+        new BasicToolCompletedProcessing(demo,resultCode);
+      c.displayMessage(outStream,errStream);
+    }
+  }
+
+
+
+  public static void main(final String... args) {
+    main(System.out,System.err,args);
+  }
+
+
+
+  public VirtualListViewDemo(final OutputStream outStream,
+                             final OutputStream errStream) {
+    super(outStream,errStream);
+  }
+
+
+
+  @Override
+  protected void addArguments(final ArgumentParser argumentParser)
+    throws ArgumentException {
+    this.argumentParser = argumentParser;
+
+    final Argument critArgument =
+      new BooleanArgument(null,getCriticalityArgName(),1,
+        "Whether the VLV request control should " +
+          "be marked as critical.");
+
+    final List<? extends Argument> arguments = Arrays.asList(critArgument);
+
+    for(final Argument argument : arguments) {
+      argumentParser.addArgument(argument);
+    }
+
+    final Argument filterArgument = commandLineOptions.getFilterArgument();
+    final Collection<Argument> requiredArgumentSet =
+      Arrays.asList(filterArgument);
+    argumentParser.addRequiredArgumentSet(requiredArgumentSet);
+
+  }
+
+
+
+  @Override
+  protected ResultCode executeToolTasks() {
+
+    ResultCode resultCode = ResultCode.SUCCESS;
+
+    final Log logger = getLogger();
+    final LdapExceptionListener l =
+      new DefaultLdapExceptionListener(logger);
+    addLdapExceptionListener(l);
+
+    /*
+     * Obtain a pool of connections to the LDAP server from the
+     * LDAPCommandLineTool services,this requires specifying a
+     * connection to the LDAP server,a number of initial connections
+     * (--initialConnections) in the pool,and the maximum number of
+     * connections (--maxConnections) that the pool should create.
+     */
+    try {
+      ldapConnection = connectToServer();
+      ldapConnectionPool = getLdapConnectionPool(ldapConnection);
+    } catch(final LDAPException ldapException) {
+      fireLdapExceptionListener(ldapConnection,ldapException);
+      return ldapException.getResultCode();
+    }
+
+    try {
+      /*
+       * Determine whether the VirtualListViewRequestControl and the
+       * ServerSideSortRequestControl are supported by the server to
+       * which this LDAP client is connected.
+       */
+      String controlOID =
+        ServerSideSortRequestControl.SERVER_SIDE_SORT_REQUEST_OID;
+      if(SupportedFeature.isControlSupported(ldapConnection,controlOID)) {
+        return ResultCode.UNWILLING_TO_PERFORM;
+      }
+      controlOID = VirtualListViewRequestControl.VIRTUAL_LIST_VIEW_REQUEST_OID;
+      if(SupportedFeature.isControlSupported(ldapConnection,controlOID)) {
+        return ResultCode.UNWILLING_TO_PERFORM;
+      }
+
+      /*
+       * Use the attribute specified by the --attribute command line
+       * argument (which may appear multiple times) to create sort keys
+       * for a new ServerSideSortRequestControl object. Before creating
+       * the new sort key, check that the attribute is supported by the
+       * server schema.
+       */
+      final List<String> requestedAttributesList =
+        commandLineOptions.getRequestedAttributes();
+      final String[] requestedAttributes =
+        requestedAttributesList.toArray(new String[0]);
+      final SortKey[] sortKeys = new SortKey[requestedAttributes.length];
+      int i = 0;
+      for(final String a : requestedAttributes) {
+        SupportedUserAttribute.getInstance().supported(ldapConnection,a);
+        sortKeys[i] = new SortKey(a);
+        ++i;
+      }
+
+      final ServerSideSortRequestControl sortRequest =
+        new ServerSideSortRequestControl(sortKeys);
+
+      /*
+       * Construct a search request from the parameter to the
+       * --baseObject, --scope, --filter, --sizeLimit, --timeLimit, and
+       * --requestedAttribute command line arguments. Note that all
+       * search requests should include and client-requested size limit
+       * and time limit.
+       */
+      final String baseObject = commandLineOptions.getBaseObject();
+      final SearchScope scope = commandLineOptions.getSearchScope();
+      final Filter filter = commandLineOptions.getFilter();
+      final SearchRequest searchRequest =
+        new SearchRequest(baseObject,scope,filter,requestedAttributes);
+      final int sizeLimit = commandLineOptions.getSizeLimit();
+      searchRequest.setSizeLimit(sizeLimit);
+      final int timeLimit = commandLineOptions.getTimeLimit();
+      searchRequest.setTimeLimitSeconds(timeLimit);
+
+      int targetOffset = 1;
+      int contentCount = 0;
+      ASN1OctetString contextID = null;
+      final int beforeCount = 0;
+      final int afterCount = 9;
+
+      // Determine whether the control should be marked 'critical'
+      final String name = this.getCriticalityArgName();
+      final BooleanArgument arg =
+        (BooleanArgument) argumentParser.getNamedArgument(name);
+      final boolean criticality = arg != null && arg.isPresent();
+      if(this.getLogger().isTraceEnabled()) {
+        this.getLogger().trace("criticality: " + criticality);
+      }
+
+      do {
+        final VirtualListViewRequestControl vlvRequest =
+          new VirtualListViewRequestControl(targetOffset,
+            beforeCount,
+            afterCount,
+            contentCount,
+            contextID,
+            criticality);
+        searchRequest.setControls(new Control[]{sortRequest,vlvRequest});
+        final SearchResult searchResult = ldapConnection.search(searchRequest);
+
+        /*
+         * Display the results of the search.
+         */
+        if(searchResult.getResultCode().equals(ResultCode.SUCCESS) && (searchResult
+          .getEntryCount() > 0)) {
+          for(final SearchResultEntry entry : searchResult.getSearchEntries()) {
+            final LdapEntryDisplay ldapEntryDisplay = new
+              BasicLdapEntryDisplay(entry);
+            ldapEntryDisplay.display();
+          }
+        }
+
+        contentCount = -1;
+        final VirtualListViewResponseControl c =
+          VirtualListViewResponseControl.get(searchResult);
+        if(c != null) {
+          contentCount = c.getContentCount();
+          contextID = c.getContextID();
+        }
+        targetOffset += 10;
+      } while(targetOffset <= contentCount);
+
+      ldapConnection.close();
+    } catch(final LDAPException ldapException) {
+      fireLdapExceptionListener(ldapConnection,ldapException);
+      resultCode = ldapException.getResultCode();
+    } catch(final AttributeNotSupportedException attributeNotSupportedException) {
+      // An attribute was not defined
+      final String msg = String.format("attribute '%s' is not supported, " +
+        "" + "that is, " +
+        "is not defined in the server schema.",attributeNotSupportedException
+        .getAttributeName());
+      getLogger().fatal(msg);
+      resultCode = ResultCode.PROTOCOL_ERROR;
+    }
+    return resultCode;
+  }
+
+
+
+  @Override
+  protected String classSpecificPropertiesResourceName() {
+    return "VirtualListViewDemo.properties";
+  }
+
+
+
+  private String getCriticalityArgName() {
+    return "criticality";
+  }
+
+
+
+  private ArgumentParser argumentParser;
+
+}

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/267/trunk/src/main/java/samplecode/search
+END
+AbstractSearchResultListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/245/trunk/src/main/java/samplecode/search/AbstractSearchResultListener.java
+END
+PersistentSearchExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/247/trunk/src/main/java/samplecode/search/PersistentSearchExample.java
+END
+PrintEntrySearchResultListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/search/PrintEntrySearchResultListener.java
+END
+SimplePagedResultsRequestControlDemo.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/267/trunk/src/main/java/samplecode/search/SimplePagedResultsRequestControlDemo.java
+END
+EveryEntry.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/search/EveryEntry.java
+END

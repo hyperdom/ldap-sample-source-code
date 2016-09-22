@@ -1,0 +1,203 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/276/trunk/src/main/resources
+END
+AuthDemo.properties
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/181/trunk/src/main/resources/AuthDemo.properties
+END
+website.wiki
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/38/trunk/src/main/resources/website.wiki
+END
+99-ssh.ldif
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1/trunk/src/main/resources/99-ssh.ldif
+END
+ModifyDnDemo.properties
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/196/trunk/src/main/resources/ModifyDnDemo.properties
+END
+AllSampleCodeDemonstrations.bash
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/154/trunk/src/main/resources/AllSampleCodeDemonstrations.bash
+END
+VirtualListViewDemo.properties
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/212/trunk/src/main/resources/VirtualListViewDemo.properties
+END
+indexPackage.properties
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1/trunk/src/main/resources/indexPackage.properties
+END
+ScriptTool.bash
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/90/trunk/src/main/resources/ScriptTool.bash
+END
+AssertionRequestControlDemo.properties
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/249/trunk/src/main/resources/AssertionRequestControlDemo.properties
+END
+MatchingRuleDemo.properties
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/194/trunk/src/main/resources/MatchingRuleDemo.properties
+END
+changes.ldif
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/13/trunk/src/main/resources/changes.ldif
+END
+testInMemoryDirectoryServer.LDIF
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1/trunk/src/main/resources/testInMemoryDirectoryServer.LDIF
+END
+testfile.ldif
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/14/trunk/src/main/resources/testfile.ldif
+END
+ModifyIncrementDemo.properties
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/256/trunk/src/main/resources/ModifyIncrementDemo.properties
+END
+LdapListenerExample.properties
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/205/trunk/src/main/resources/LdapListenerExample.properties
+END
+PersistentSearchExample.properties
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/170/trunk/src/main/resources/PersistentSearchExample.properties
+END
+exceptions_en.properties
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/170/trunk/src/main/resources/exceptions_en.properties
+END
+EffectiveRightsEntryDemo.properties
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/88/trunk/src/main/resources/EffectiveRightsEntryDemo.properties
+END
+MatchedValuesRequestControlExample.properties
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/191/trunk/src/main/resources/MatchedValuesRequestControlExample.properties
+END
+ContentSyncDemo.properties
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/240/trunk/src/main/resources/ContentSyncDemo.properties
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/255/trunk/src/main/resources/log4j.properties
+END
+BindDemo.properties
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/276/trunk/src/main/resources/BindDemo.properties
+END
+PasswordModifyExtendedOperationDemo.properties
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/210/trunk/src/main/resources/PasswordModifyExtendedOperationDemo.properties
+END
+LdapTreeDelete.properties
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/192/trunk/src/main/resources/LdapTreeDelete.properties
+END
+logging.properties
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/170/trunk/src/main/resources/logging.properties
+END
+ServerSetDemo.properties
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/218/trunk/src/main/resources/ServerSetDemo.properties
+END
+CompareDemo.properties
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/261/trunk/src/main/resources/CompareDemo.properties
+END
+DisplayBindSequence.properties
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/211/trunk/src/main/resources/DisplayBindSequence.properties
+END
+samplecode_en.properties
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/213/trunk/src/main/resources/samplecode_en.properties
+END
+add-samplecode.acis.ldif
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/111/trunk/src/main/resources/add-samplecode.acis.ldif
+END
+ScriptTool.properties
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/213/trunk/src/main/resources/ScriptTool.properties
+END
+commandLineOptions.properties
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/139/trunk/src/main/resources/commandLineOptions.properties
+END
+testDeleteBranch.LDIF
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/192/trunk/src/main/resources/testDeleteBranch.LDIF
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/annotation
+END
+Singleton.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/annotation/Singleton.java
+END
+Author.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/annotation/Author.java
+END
+Launchable.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/annotation/Launchable.java
+END
+CodeVersion.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/annotation/CodeVersion.java
+END
+Since.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/annotation/Since.java
+END

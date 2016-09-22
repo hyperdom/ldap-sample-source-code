@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/276/trunk/src/main/java/samplecode/args
+END
+FilterPropertiesBackedArgument.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/args/FilterPropertiesBackedArgument.java
+END
+StringPropertiesBackedArgument.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/276/trunk/src/main/java/samplecode/args/StringPropertiesBackedArgument.java
+END
+IntegerPropertiesBackedArgument.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/args/IntegerPropertiesBackedArgument.java
+END
+PropertiesBackedArgument.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/args/PropertiesBackedArgument.java
+END
+SearchScopePropertiesBackedArgument.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/args/SearchScopePropertiesBackedArgument.java
+END
+BooleanPropertiesBackedArgument.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/256/trunk/src/main/java/samplecode/args/BooleanPropertiesBackedArgument.java
+END
