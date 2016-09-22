@@ -16,14 +16,34 @@
 
 package samplecode.memory;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.util.Arrays;
+import java.util.List;
+
 import com.unboundid.ldap.listener.InMemoryDirectoryServer;
 import com.unboundid.ldap.listener.InMemoryDirectoryServerConfig;
-import com.unboundid.ldap.sdk.*;
+import com.unboundid.ldap.sdk.DN;
+import com.unboundid.ldap.sdk.Entry;
+import com.unboundid.ldap.sdk.Filter;
+import com.unboundid.ldap.sdk.LDAPConnectionPool;
+import com.unboundid.ldap.sdk.LDAPException;
+import com.unboundid.ldap.sdk.ResultCode;
+import com.unboundid.ldap.sdk.SearchRequest;
+import com.unboundid.ldap.sdk.SearchResult;
+import com.unboundid.ldap.sdk.SearchResultEntry;
+import com.unboundid.ldap.sdk.SearchScope;
 import com.unboundid.ldif.LDIFException;
 import com.unboundid.ldif.LDIFReader;
 import com.unboundid.util.LDAPCommandLineTool;
-import com.unboundid.util.args.*;
-import samplecode.annotation.Author;
+import com.unboundid.util.args.ArgumentException;
+import com.unboundid.util.args.ArgumentParser;
+import com.unboundid.util.args.BooleanArgument;
+import com.unboundid.util.args.DNArgument;
+import com.unboundid.util.args.FileArgument;
+import com.unboundid.util.args.StringArgument;
 import samplecode.annotation.CodeVersion;
 import samplecode.annotation.Launchable;
 import samplecode.annotation.Since;
@@ -33,13 +53,6 @@ import samplecode.tools.AbstractTool;
 import samplecode.tools.BasicToolCompletedProcessing;
 import samplecode.tools.ToolCompletedProcessing;
 import samplecode.util.SampleCodeCollectionUtils;
-
-import java.io.File;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintStream;
-import java.util.Arrays;
-import java.util.List;
 
 import static com.unboundid.util.Validator.ensureNotNull;
 
@@ -602,7 +615,13 @@ public final class LdapListenerExample extends AbstractTool {
       getLogger().fatal(e);
       resultCode = ResultCode.PARAM_ERROR;
     }
-    server.shutDown(true);
+
+    //server.shutDown(true);
+    while(server != null){
+      //As this server is running for testing purposes, we omit an actual shutdown handling for now.
+      // Ctrl + C works good enough.
+    }
+
     return resultCode;
   }
 
