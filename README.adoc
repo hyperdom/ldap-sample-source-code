@@ -7,3 +7,4 @@ adopted from https://code.google.com/archive/p/ldap-sample-code/source/default/s
 Motivated by his blogpost at https://ff1959.wordpress.com/2011/11/01/ldap-in-memory-directory-server-using-unboundid-ldap-sdk/
 
 
+Enhanced by a simple gradle build.
