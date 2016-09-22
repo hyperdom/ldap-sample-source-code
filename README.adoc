@@ -1,4 +1,4 @@
-h1. LDAP Sample code repo
+= LDAP Sample code repo
 
 Initially created by Terry Gardner <terry.gardner@unboundid.com>
 
