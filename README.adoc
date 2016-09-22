@@ -1,0 +1,9 @@
+h1. LDAP Sample code repo
+
+Initially created by Terry Gardner <terry.gardner@unboundid.com>
+
+adopted from https://code.google.com/archive/p/ldap-sample-code/source/default/source
+
+Motivated by his blogpost at https://ff1959.wordpress.com/2011/11/01/ldap-in-memory-directory-server-using-unboundid-ldap-sdk/
+
+
